@@ -4,6 +4,10 @@
   - [Deployment](n00b-gettingStarted.md)
   - [Syntax and Configuration](n00b-syntaxReference.md)
 
+- 📊 sidebar test
+  - [folder](./new_start/*)
+  - [asus-linux.org](./new_start/2022-08-26-asus-linux.org.md)
+
 - 📊 Diagram Syntax
   - [Flowchart](flowchart.md)
   - [Sequence diagram](sequenceDiagram.md)
