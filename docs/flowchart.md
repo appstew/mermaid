@@ -1,59 +1,5 @@
 # Flowcharts - Basic Syntax
 
-<div id="sample">
-    <div style="width: 100%; display: flex; justify-content: space-between">
-      <div id="myPaletteDiv" style="width: 100px; margin-right: 2px; background-color: #282c34;"></div>
-      <div id="myDiagramDiv" style="flex-grow: 1; height: 750px; background-color: #282c34;"></div>
-    </div>
-    <p>
-      The FlowChart sample demonstrates several key features of GoJS,
-      namely <a href="../intro/palette.html">Palette</a>s,
-      <a href="../intro/links.html">Linkable nodes</a>, Drag/Drop behavior,
-      <a href="../intro/textBlocks.html">Text Editing</a>, and the use of
-      <a href="../intro/templateMaps.html">Node Template Maps</a> in Diagrams.
-    </p>
-
-<button id="SaveButton" onclick="save()">Save</button>
-<button onclick="load()">Load</button>
-Diagram Model saved in JSON format:
-<textarea id="mySavedModel" style="width:100%;height:300px">
-{ "class": "go.GraphLinksModel",
-"linkFromPortIdProperty": "fromPort",
-"linkToPortIdProperty": "toPort",
-"nodeDataArray": [
-{"category":"Comment", "loc":"360 -10", "text":"Kookie Brittle", "key":-13},
-{"key":-1, "category":"Start", "loc":"175 0", "text":"Start"},
-{"key":0, "loc":"-5 75", "text":"Preheat oven to 375 F"},
-{"key":1, "loc":"175 100", "text":"In a bowl, blend: 1 cup margarine, 1.5 teaspoon vanilla, 1 teaspoon salt"},
-{"key":2, "loc":"175 200", "text":"Gradually beat in 1 cup sugar and 2 cups sifted flour"},
-{"key":3, "loc":"175 290", "text":"Mix in 6 oz (1 cup) Nestle's Semi-Sweet Chocolate Morsels"},
-{"key":4, "loc":"175 380", "text":"Press evenly into ungreased 15x10x1 pan"},
-{"key":5, "loc":"355 85", "text":"Finely chop 1/2 cup of your choice of nuts"},
-{"key":6, "loc":"175 450", "text":"Sprinkle nuts on top"},
-{"key":7, "loc":"175 515", "text":"Bake for 25 minutes and let cool"},
-{"key":8, "loc":"175 585", "text":"Cut into rectangular grid"},
-{"key":-2, "category":"End", "loc":"175 660", "text":"Enjoy!"}
-],
-"linkDataArray": [
-{"from":1, "to":2, "fromPort":"B", "toPort":"T"},
-{"from":2, "to":3, "fromPort":"B", "toPort":"T"},
-{"from":3, "to":4, "fromPort":"B", "toPort":"T"},
-{"from":4, "to":6, "fromPort":"B", "toPort":"T"},
-{"from":6, "to":7, "fromPort":"B", "toPort":"T"},
-{"from":7, "to":8, "fromPort":"B", "toPort":"T"},
-{"from":8, "to":-2, "fromPort":"B", "toPort":"T"},
-{"from":-1, "to":0, "fromPort":"B", "toPort":"T"},
-{"from":-1, "to":1, "fromPort":"B", "toPort":"T"},
-{"from":-1, "to":5, "fromPort":"B", "toPort":"T"},
-{"from":5, "to":4, "fromPort":"B", "toPort":"T"},
-{"from":0, "to":4, "fromPort":"B", "toPort":"T"}
-]}
-</textarea>
-<button onclick="printDiagram()">Print Diagram Using SVG</button>
-  </div>
-  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700&swap' rel='stylesheet' type='text/css'>
-</div>
-
 **Edit this Page** [![N|Solid](img/GitHub-Mark-32px.png)](https://github.com/mermaid-js/mermaid/blob/develop/docs/flowchart.md)
 
 All Flowcharts are composed of **nodes**, the geometric shapes and **edges**, the arrows or lines. The mermaid code defines the way that these **nodes** and **edges** are made and interact.

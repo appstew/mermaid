@@ -4,23 +4,19 @@
   - [Deployment](n00b-gettingStarted.md)
   - [Syntax and Configuration](n00b-syntaxReference.md)
 
-- 📊 sidebar test
-  - [folder](./new_start/*)
-  - [asus-linux.org](./new_start/2022-08-26-asus-linux.org.md)
+  - 1.[수업노트](./chapter/imdex.html)
+  - 2.[정리](./trimmed/index.html)
+  - 3.[알고리즘](./algorithms/index.html)
+  - 4.[개인메모](./diary/index.html)
+  -
+
 
 - 📊 Diagram Syntax
   - [Flowchart](flowchart.md)
-  - [Sequence diagram](sequenceDiagram.md)
-  - [Class Diagram](classDiagram.md)
-  - [State Diagram](stateDiagram.md)
-  - [Entity Relationship Diagram](entityRelationshipDiagram.md)
-  - [User Journey](user-journey.md)
+  - [Flowchart2](flowchart2.html)
   - [Gantt](gantt.md)
+  - [Class Diagram](classDiagram.md)
   - [Pie Chart](pie.md)
-  - [Requirement Diagram](requirementDiagram.md)
-  - [Gitgraph (Git) Diagram 🔥](gitgraph.md)
-  - [C4C Diagram (Context) Diagram 🦺⚠️](c4c.md)
-  - [Other Examples](examples.md)
 
 - ⚙️ Deployment and Configuration
 
