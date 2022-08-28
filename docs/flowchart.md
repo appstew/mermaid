@@ -1,5 +1,59 @@
 # Flowcharts - Basic Syntax
 
+<div id="sample">
+    <div style="width: 100%; display: flex; justify-content: space-between">
+      <div id="myPaletteDiv" style="width: 100px; margin-right: 2px; background-color: #282c34;"></div>
+      <div id="myDiagramDiv" style="flex-grow: 1; height: 750px; background-color: #282c34;"></div>
+    </div>
+    <p>
+      The FlowChart sample demonstrates several key features of GoJS,
+      namely <a href="../intro/palette.html">Palette</a>s,
+      <a href="../intro/links.html">Linkable nodes</a>, Drag/Drop behavior,
+      <a href="../intro/textBlocks.html">Text Editing</a>, and the use of
+      <a href="../intro/templateMaps.html">Node Template Maps</a> in Diagrams.
+    </p>
+
+<button id="SaveButton" onclick="save()">Save</button>
+<button onclick="load()">Load</button>
+Diagram Model saved in JSON format:
+<textarea id="mySavedModel" style="width:100%;height:300px">
+{ "class": "go.GraphLinksModel",
+"linkFromPortIdProperty": "fromPort",
+"linkToPortIdProperty": "toPort",
+"nodeDataArray": [
+{"category":"Comment", "loc":"360 -10", "text":"Kookie Brittle", "key":-13},
+{"key":-1, "category":"Start", "loc":"175 0", "text":"Start"},
+{"key":0, "loc":"-5 75", "text":"Preheat oven to 375 F"},
+{"key":1, "loc":"175 100", "text":"In a bowl, blend: 1 cup margarine, 1.5 teaspoon vanilla, 1 teaspoon salt"},
+{"key":2, "loc":"175 200", "text":"Gradually beat in 1 cup sugar and 2 cups sifted flour"},
+{"key":3, "loc":"175 290", "text":"Mix in 6 oz (1 cup) Nestle's Semi-Sweet Chocolate Morsels"},
+{"key":4, "loc":"175 380", "text":"Press evenly into ungreased 15x10x1 pan"},
+{"key":5, "loc":"355 85", "text":"Finely chop 1/2 cup of your choice of nuts"},
+{"key":6, "loc":"175 450", "text":"Sprinkle nuts on top"},
+{"key":7, "loc":"175 515", "text":"Bake for 25 minutes and let cool"},
+{"key":8, "loc":"175 585", "text":"Cut into rectangular grid"},
+{"key":-2, "category":"End", "loc":"175 660", "text":"Enjoy!"}
+],
+"linkDataArray": [
+{"from":1, "to":2, "fromPort":"B", "toPort":"T"},
+{"from":2, "to":3, "fromPort":"B", "toPort":"T"},
+{"from":3, "to":4, "fromPort":"B", "toPort":"T"},
+{"from":4, "to":6, "fromPort":"B", "toPort":"T"},
+{"from":6, "to":7, "fromPort":"B", "toPort":"T"},
+{"from":7, "to":8, "fromPort":"B", "toPort":"T"},
+{"from":8, "to":-2, "fromPort":"B", "toPort":"T"},
+{"from":-1, "to":0, "fromPort":"B", "toPort":"T"},
+{"from":-1, "to":1, "fromPort":"B", "toPort":"T"},
+{"from":-1, "to":5, "fromPort":"B", "toPort":"T"},
+{"from":5, "to":4, "fromPort":"B", "toPort":"T"},
+{"from":0, "to":4, "fromPort":"B", "toPort":"T"}
+]}
+</textarea>
+<button onclick="printDiagram()">Print Diagram Using SVG</button>
+  </div>
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700&swap' rel='stylesheet' type='text/css'>
+</div>
+
 **Edit this Page** [![N|Solid](img/GitHub-Mark-32px.png)](https://github.com/mermaid-js/mermaid/blob/develop/docs/flowchart.md)
 
 All Flowcharts are composed of **nodes**, the geometric shapes and **edges**, the arrows or lines. The mermaid code defines the way that these **nodes** and **edges** are made and interact.
@@ -10,41 +64,7 @@ It can also accommodate different arrow types, multi directional arrows, and lin
 
 ### A node (default)
 
-
-```mermaid
-gantt
-    dateFormat  YYYY-MM-DD
-    title       Adding GANTT diagram functionality to mermaid
-    excludes    weekends
-    %% (`excludes` accepts specific dates in YYYY-MM-DD format, days of the week ("sunday") or "weekends", but not the word "weekdays".)
-
-    section A section
-    Completed task            :done,    des1, 2014-01-06,2014-01-08
-    Active task               :active,  des2, 2014-01-09, 3d
-    Future task               :         des3, after des2, 5d
-    Future task2              :         des4, after des3, 5d
-
-    section Critical tasks
-    Completed task in the critical line :crit, done, 2014-01-06,24h
-    Implement parser and jison          :crit, done, after des1, 2d
-    Create tests for parser             :crit, active, 3d
-    Future task in critical line        :crit, 5d
-    Create tests for renderer           :2d
-    Add to mermaid                      :1d
-    Functionality added                 :milestone, 2014-01-25, 0d
-
-    section Documentation
-    Describe gantt syntax               :active, a1, after des1, 3d
-    Add gantt diagram to demo page      :after a1  , 20h
-    Add another diagram to demo page    :doc1, after a1  , 48h
-
-    section Last section
-    Describe gantt syntax               :after doc1, 3d
-    Add gantt diagram to demo page      :20h
-    Add another diagram to demo page    :48h
-```
-
-```mermaid
+```mermaid-example
 flowchart LR
     id
 ```
@@ -57,7 +77,7 @@ It is also possible to set text in the box that differs from the id. If this is 
 found for the node that will be used. Also if you define edges for the node later on, you can omit text definitions. The
 one previously defined will be used when rendering the box.
 
-```mermaid
+```mermaid-example
 flowchart LR
     id1[This is the text in the box]
 ```
@@ -68,14 +88,14 @@ This statement declares the direction of the Flowchart.
 
 This declares the flowchart is oriented from top to bottom (`TD` or `TB`).
 
-```mermaid
+```mermaid-example
 flowchart TD
     Start --> Stop
 ```
 
 This declares the flowchart is oriented from left to right (`LR`).
 
-```mermaid
+```mermaid-example
 flowchart LR
     Start --> Stop
 ```
@@ -94,42 +114,42 @@ Possible FlowChart orientations are:
 
 ### A node with round edges
 
-```mermaid
+```mermaid-example
 flowchart LR
     id1(This is the text in the box)
 ```
 
 ### A stadium-shaped node
 
-```mermaid
+```mermaid-example
 flowchart LR
     id1([This is the text in the box])
 ```
 
 ### A node in a subroutine shape
 
-```mermaid
+```mermaid-example
 flowchart LR
     id1[[This is the text in the box]]
 ```
 
 ### A node in a cylindrical shape
 
-```mermaid
+```mermaid-example
 flowchart LR
     id1[(Database)]
 ```
 
 ### A node in the form of a circle
 
-```mermaid
+```mermaid-example
 flowchart LR
     id1((This is the text in the circle))
 ```
 
 ### A node in an asymmetric shape
 
-```mermaid
+```mermaid-example
 flowchart LR
     id1>This is the text in the box]
 ```
@@ -137,47 +157,47 @@ Currently only the shape above is possible and not its mirror. *This might chang
 
 ### A node (rhombus)
 
-```mermaid
+```mermaid-example
 flowchart LR
     id1{This is the text in the box}
 ```
 
 ### A hexagon node
-```mermaid
+```mermaid-example
 flowchart LR
     id1{{This is the text in the box}}
 ```
 
 ### Parallelogram
 
-```mermaid
+```mermaid-example
 flowchart TD
     id1[/This is the text in the box/]
 ```
 
 ### Parallelogram alt
 
-```mermaid
+```mermaid-example
 flowchart TD
     id1[\This is the text in the box\]
 ```
 
 ### Trapezoid
 
-```mermaid
+```mermaid-example
 flowchart TD
     A[/Christmas\]
 ```
 ### Trapezoid alt
 
-```mermaid
+```mermaid-example
 flowchart TD
     B[\Go shopping/]
 ```
 
 ### Double circle
 
-```mermaid
+```mermaid-example
 flowchart TD
     id1(((This is the text in the circle)))
 ```
@@ -188,72 +208,70 @@ Nodes can be connected with links/edges. It is possible to have different types 
 
 ### A link with arrow head
 
-```mermaid
+```mermaid-example
 flowchart LR
     A-->B
-click A href "https://google.com"
 ```
 
 ### An open link
 
-```mermaid
+```mermaid-example
 flowchart LR
     A --- B
 ```
 
 ### Text on links
 
-```mermaid
+```mermaid-example
 flowchart LR
     A-- This is the text! ---B
 ```
 
 or
 
-```mermaid
+```mermaid-example
 flowchart LR
     A---|This is the text|B
 ```
 
 ### A link with arrow head and text
 
-```mermaid
+```mermaid-example
 flowchart LR
     A-->|text|B
-click A href "https://google.com"
 ```
 
 or
 
-```mermaid
+```mermaid-example
 flowchart LR
     A-- text -->B
 ```
 
 ### Dotted link
 
-```mermaid
+```mermaid-example
 flowchart LR;
    A-.->B;
 ```
 
 ### Dotted link with text
 
-```mermaid
+```mermaid-example
 flowchart LR
    A-. text .-> B
 ```
 
 ### Thick link
 
-```mermaid
+```mermaid-example
 flowchart LR
    A ==> B
 ```
 
 ### Thick link with text
 
-```mermaid
+```mermaid-example
 flowchart LR
    A == text ==> B
 ```
@@ -261,19 +279,19 @@ flowchart LR
 ### Chaining of links
 
 It is possible declare many links in the same line as per below:
-```mermaid
+```mermaid-example
 flowchart LR
    A -- text --> B -- text2 --> C
 ```
 
 It is also possible to declare multiple nodes links in the same line as per below:
-```mermaid
+```mermaid-example
 flowchart LR
    a --> b & c--> d
 ```
 
 You can then describe dependencies in a very expressive way. Like the one-liner below:
-```mermaid
+```mermaid-example
 flowchart TB
     A & B--> C & D
 ```
@@ -293,7 +311,7 @@ flowchart TB
 
 There are new types of arrows supported as per below:
 
-```mermaid
+```mermaid-example
 flowchart LR
     A --o B
     B --x C
@@ -304,7 +322,7 @@ flowchart LR
 
 There is the possibility to use multidirectional arrows.
 
-```mermaid
+```mermaid-example
 flowchart LR
     A o--o B
     B <--> C
@@ -322,7 +340,7 @@ than the others by adding extra dashes in the link definition.
 In the following example, two extra dashes are added in the link from node _B_
 to node _E_, so that it spans two more ranks than regular links:
 
-```mermaid
+```mermaid-example
 flowchart TD
     A[Start] --> B{Is it?}
     B -->|Yes| C[OK]
@@ -338,7 +356,7 @@ When the link label is written in the middle of the link, the extra dashes must
 be added on the right side of the link. The following example is equivalent to
 the previous one:
 
-```mermaid
+```mermaid-example
 flowchart TD
     A[Start] --> B{Is it?}
     B -- Yes --> C[OK]
@@ -363,7 +381,7 @@ as summed up in the following table:
 
 It is possible to put text within quotes in order to render more troublesome characters. As in the example below:
 
-```mermaid
+```mermaid-example
 flowchart LR
     id1["This is the (text) in the box"]
 ```
@@ -372,7 +390,7 @@ flowchart LR
 
 It is possible to escape characters using the syntax exemplified here.
 
-```mermaid
+```mermaid-example
     flowchart LR
         A["A double quote:#quot;"] -->B["A dec char:#9829;"]
 ```
@@ -389,7 +407,7 @@ end
 
 An example below:
 
-```mermaid
+```mermaid-example
 flowchart TB
     c1-->a2
     subgraph one
@@ -405,7 +423,7 @@ flowchart TB
 
  You can also set an explicit id for the subgraph.
 
-```mermaid
+```mermaid-example
 flowchart TB
     c1-->a2
     subgraph ide1 [one]
@@ -417,7 +435,7 @@ flowchart TB
 
 With the graphtype flowchart it is also possible to set edges to and from subgraphs as in the flowchart below.
 
-```mermaid
+```mermaid-example
 flowchart TB
     c1-->a2
     subgraph one
@@ -438,7 +456,7 @@ flowchart TB
 
 With the graphtype flowcharts you can use the direction statement to set the direction which the subgraph will render like in this example.
 
-```mermaid
+```mermaid-example
 flowchart LR
   subgraph TOP
     direction TB
@@ -479,7 +497,7 @@ Examples of tooltip usage below:
 
 The tooltip text is surrounded in double quotes. The styles of the tooltip are set by the class `.mermaidTooltip`.
 
-```mermaid
+```mermaid-example
 flowchart LR
     A-->B
     B-->C
@@ -495,7 +513,7 @@ flowchart LR
 ?> Due to limitations with how Docsify handles JavaScript callback functions, an alternate working demo for the above code can be viewed at [this jsfiddle](https://jsfiddle.net/s37cjoau/3/).
 
 Links are opened in the same browser tab/window by default. It is possible to change this by adding a link target to the click definition (`_self`, `_blank`, `_parent` and `_top` are supported):
-```mermaid
+```mermaid-example
 flowchart LR
     A-->B
     B-->C
@@ -563,7 +581,7 @@ linkStyle 3 stroke:#ff3,stroke-width:4px,color:red;
 
 It is possible to apply specific styles such as a thicker border or a different background color to a node.
 
-```mermaid
+```mermaid-example
 flowchart LR
     id1(Start)-->id2(Stop)
     style id1 fill:#f9f,stroke:#333,stroke-width:4px
@@ -597,7 +615,7 @@ It is also possible to attach a class to a list of nodes in one statement:
 
 A shorter form of adding a class is to attach the classname to the node using the `:::`operator as per below:
 
-```mermaid
+```mermaid-example
 flowchart LR
     A:::someclass --> B
     classDef someclass fill:#f96;
@@ -623,7 +641,7 @@ below:
 
 **Example definition**
 
-```mermaid
+```mermaid-example
 flowchart LR;
     A-->B[AAA<span>BBB</span>]
     B-->D
@@ -646,7 +664,7 @@ It is possible to add icons from fontawesome.
 
 The icons are accessed via the syntax fa:#icon class name#.
 
-```mermaid
+```mermaid-example
 flowchart TD
     B["fab:fa-twitter for peace"]
     B-->C[fa:fa-ban forbidden]
@@ -665,7 +683,7 @@ flowchart TD
 
 Below is the new declaration of the graph edges which is also valid along with the old declaration of the graph edges.
 
-```mermaid
+```mermaid-example
 flowchart LR
     A[Hard edge] -->|Link text| B(Round edge)
     B --> C{Decision}

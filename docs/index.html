@@ -37,6 +37,7 @@
         paths: { vs: 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.29.1/min/vs' },
       };
     </script>
+    <script src="../src/go.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.29.1/min/vs/loader.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.29.1/min/vs/editor/editor.main.nls.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.29.1/min/vs/editor/editor.main.js"></script>
@@ -53,114 +54,124 @@
   </head>
   <body>
     <div id="app"></div>
-    <script>
-      var initEditor = exports.default;
-      var parser = new DOMParser();
-      var currentCodeExample = 0;
-      var colorize = [];
+    /// gojs start
 
-      function colorizeEverything(html) {
-        initEditor(monaco);
-        return new Promise((resolve, reject) => {
-          monaco.editor.setTheme('mermaid');
-          var parsed = parser.parseFromString(html, 'text/html').body;
-          Promise.all(
-            [...parsed.querySelectorAll('pre[id*="code"]')].map((codeBlock) =>
-              monaco.editor.colorize(codeBlock.innerText, 'mermaid')
-            )
-          ).then((result) => {
-            parsed
-              .querySelectorAll('pre[id*="code"]')
-              .forEach((codeBlock, index) => (codeBlock.innerHTML = result[index]));
-            resolve(parsed.innerHTML);
-          });
-        });
-      }
 
-      function escapeHTML(html) {
-        return html
-          .replaceAll('&', '&amp;')
-          .replaceAll('<', '&lt;')
-          .replaceAll('>', '&gt;')
-          .replaceAll('"', '&quot;')
-          .replaceAll("'", '&apos;');
-      }
+'<script src="../release/go.js"></script>
 
-      window.$docsify = {
-        search: 'auto',
-        name: 'mermaid',
-        repo: 'https://github.com/mermaid-js/mermaid',
-        loadSidebar: true,
-        mergeNavbar: true,
-        maxLevel: 4,
-        subMaxLevel: 2,
-        markdown: {
-          renderer: {
-            code: function (code, lang) {
-              if (lang && (lang.startsWith('mermaid') || lang === 'mmd')) {
-                var resultingHTML = '';
 
-                if (lang === 'mmd' || lang === 'mermaid-example') {
-                  currentCodeExample++;
-                  colorize.push(currentCodeExample);
-                  resultingHTML +=
-                    '<pre id="code' + currentCodeExample + '">' + escapeHTML(code) + '</pre>';
-                }
+<script>
+var initEditor = exports.default;
+var parser = new DOMParser();
+var currentCodeExample = 0;
+var colorize = [];
 
-                if (lang === 'mermaid' || lang === 'mermaid-example') {
-                  resultingHTML +=
-                    '<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + '</div>';
-                }
+function colorizeEverything(html) {
+initEditor(monaco);
+return new Promise((resolve, reject) => {
+monaco.editor.setTheme('mermaid');
+var parsed = parser.parseFromString(html, 'text/html').body;
+Promise.all(
+[...parsed.querySelectorAll('pre[id*="code"]')].map((codeBlock) =>
+monaco.editor.colorize(codeBlock.innerText, 'mermaid')
+)
+).then((result) => {
+parsed
+.querySelectorAll('pre[id*="code"]')
+.forEach((codeBlock, index) => (codeBlock.innerHTML = result[index]));
+resolve(parsed.innerHTML);
+});
+});
+}
 
-                if (resultingHTML !== '') {
-                  return resultingHTML;
-                }
-              }
-              return this.origin.code.apply(this, arguments);
-            },
-          },
-        },
-        plugins: [
-          function (hook, vm) {
-            hook.beforeEach(function (html) {
-              url = 'https://github.com/mermaid-js/mermaid/blob/develop/docs/' + vm.route.file;
-              var editHtml = '[:memo: Edit this Page](' + url + ')\n';
-              return editHtml + html;
-            });
+function escapeHTML(html) {
+return html
+.replaceAll('&', '&amp;')
+.replaceAll('<', '&lt;')
+.replaceAll('>', '&gt;')
+.replaceAll('"', '&quot;')
+.replaceAll("'", '&apos;');
+}
 
-            hook.afterEach(function (html, next) {
-              next(html);
-              (async () => {
-                while (!window.hasOwnProperty('monaco'))
-                  await new Promise((resolve) => setTimeout(resolve, 1000));
-                colorizeEverything(html).then(
-                  (newHTML) => (document.querySelector('article.markdown-section').innerHTML = newHTML)
-                );
-              })();
-            });
-          },
-        ],
-      };
+window.$docsify = {
+search: 'auto',
+name: 'mermaid',
+repo: 'https://github.com/mermaid-js/mermaid',
+loadSidebar: true,
+mergeNavbar: true,
+maxLevel: 4,
+subMaxLevel: 2,
+markdown: {
+renderer: {
+code: function (code, lang) {
+if (lang && (lang.startsWith('mermaid') || lang === 'mmd')) {
+var resultingHTML = '';
 
-      var num = 0;
-      const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+if (lang === 'mmd' || lang === 'mermaid-example') {
+  currentCodeExample++;
+  colorize.push(currentCodeExample);
+  resultingHTML +=
+    '<pre id="code' + currentCodeExample + '">' + escapeHTML(code) + '</pre>';
+}
 
-      const conf = {
-        logLevel: 4,
-        startOnLoad: false,
-        themeCSS: '.label { font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif; }',
-      };
-      if (isDarkMode) conf.theme = 'dark';
-      mermaid.initialize(conf);
-    </script>
-    <script>
-      window.onhashchange = function (a) {
-        //code
-        if (location) {
-          ga('send', 'pageview', location.hash);
-        }
-      };
-    </script>
+if (lang === 'mermaid' || lang === 'mermaid-example') {
+  resultingHTML +=
+    '<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + '</div>';
+}
+
+
+
+if (resultingHTML !== '') {
+  return resultingHTML;
+}
+}
+return this.origin.code.apply(this, arguments);
+},
+},
+},
+plugins: [
+function (hook, vm) {
+hook.beforeEach(function (html) {
+url = 'https://github.com/mermaid-js/mermaid/blob/develop/docs/' + vm.route.file;
+var editHtml = '[:memo: Edit this Page](' + url + ')\n';
+return editHtml + html;
+});
+
+hook.afterEach(function (html, next) {
+next(html);
+(async () => {
+while (!window.hasOwnProperty('monaco'))
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+colorizeEverything(html).then(
+  (newHTML) => (document.querySelector('article.markdown-section').innerHTML = newHTML)
+);
+})();
+});
+},
+],
+};
+
+var num = 0;
+const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+const conf = {
+logLevel: 4,
+startOnLoad: false,
+themeCSS: '.label { font-family: Source Sans Pro,Helvetica Neue,Arial,sans-serif; }',
+};
+if (isDarkMode) conf.theme = 'dark';
+mermaid.initialize(conf);
+</script>
+<script>
+window.onhashchange = function (a) {
+//code
+if (location) {
+ga('send', 'pageview', location.hash);
+}
+};
+</script>
+
+
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>

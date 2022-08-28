@@ -6,6 +6,7 @@
 
 - 📊 Diagram Syntax
   - [Flowchart](flowchart.md)
+  - [Flowchart2](flowchart2.html)
   - [Sequence diagram](sequenceDiagram.md)
   - [Class Diagram](classDiagram.md)
   - [State Diagram](stateDiagram.md)
