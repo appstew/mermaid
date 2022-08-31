@@ -1,3 +1,12 @@
 dist/**
 .github/**
-docs/Setup.md
+docs/**
+.webpack/**
+assets/**
+demos/**
+extensions/**
+img/**
+node_modules/**
+release/**
+src/**
+

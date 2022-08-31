@@ -4,16 +4,19 @@
   - [Deployment](n00b-gettingStarted.md)
   - [Syntax and Configuration](n00b-syntaxReference.md)
 
-  - 1.[수업노트](./chapter/imdex.html)
-  - 2.[정리](./trimmed/index.html)
-  - 3.[알고리즘](./algorithms/index.html)
-  - 4.[개인메모](./diary/index.html)
-  -
-
-
+  - [수업노트](./chapter/imdex.html)
+  - [정리](./trimmed/index.html)
+  - [알고리즘](./algorithms/index.html)
+  - [개인메모](./diary/index.html)
+  - [flowchart.html](flowchart.html)
+  - [Flowchart2](flowchart2.html)
+  - [Flowchart](flowchart.md)
+  - [kanban2.html](kanban2.html)
+  - [diary-md](./diary/index.md)
+  - [diary-index](./diary/index.html)
 - 📊 Diagram Syntax
   - [Flowchart](flowchart.md)
-  - [Flowchart2](flowchart2.html)
+
   - [Gantt](gantt.md)
   - [Class Diagram](classDiagram.md)
   - [Pie Chart](pie.md)

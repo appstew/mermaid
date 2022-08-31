@@ -2624,7 +2624,7 @@ export class Spot {
  *          .add(new go.PathSegment(go.PathSegment.Line, q.x, q.y))
  *          .add(new go.PathSegment(go.PathSegment.Arc, sweep/2, -sweep, 0, 0, radius, radius).close()));
  * ```
- * See samples that make use of Geometries in the <a href="../../samples/index.html#geometries">samples index</a>.
+ * See samples that make use of Geometries in the <a href="../../samples/uelder_test.html#geometries">samples index</a>.
  * @unrestricted
  * @category Geometry
  */
@@ -4489,7 +4489,7 @@ export class UndoManager {
  * via canonicalized InputEvents.
  * <p class="boxrun">
  * For more discussion, see <a href="../../intro/tools.html">Introduction to Tools</a>.
- * See samples that make use of tools in the <a href="../../samples/index.html#tools">samples index</a>.
+ * See samples that make use of tools in the <a href="../../samples/uelder_test.html#tools">samples index</a>.
  *
  * Most tools are "mode-less" tools that are managed by the ToolManager,
  * which chooses the current tool based on the kind and position of the mouse event and the parts in the diagram.
@@ -13081,7 +13081,7 @@ export interface ImageRendererOptions extends DiagramRendererOptions {
  * The Palette is Diagram#isReadOnly but to support drag-and-drop its Diagram#allowDragOut is true.
  * <p class="box">
  * For more discussion, see <a href="../../intro/palette.html">Introduction to Palettes</a>.
- * See samples that make use of Palettes in the <a href="../../samples/index.html#palette">samples index</a>.
+ * See samples that make use of Palettes in the <a href="../../samples/uelder_test.html#palette">samples index</a>.
  *
  * You can control the order of Parts in the palette in several manners:
  *   - If you want to keep the order given by `myPalette.model.nodeDataArray`,
@@ -13125,7 +13125,7 @@ export class Palette extends Diagram {
  * with a rectangular box showing the viewport displayed by that other diagram.
  * <p class="box">
  * For more discussion, see <a href="../../intro/overview.html">Introduction to Overviews</a>.
- * See samples that make use of Overviews in the <a href="../../samples/index.html#overview">samples index</a>.
+ * See samples that make use of Overviews in the <a href="../../samples/uelder_test.html#overview">samples index</a>.
  *
  * All you need to do is set Overview#observed.
  * For example:
@@ -21614,7 +21614,7 @@ export class Node extends Part {
  * which are members of the group.
  * <p class="box">
  * For more discussion, see <a href="../../intro/groups.html">Introduction to Groups</a>.
- * See samples that make use of Groups in the <a href="../../samples/index.html#groups">samples index</a>.
+ * See samples that make use of Groups in the <a href="../../samples/uelder_test.html#groups">samples index</a>.
  *
  * Although you can create a Group and Diagram#add it to a Diagram, this does not update the Model.
  * It is more common to create a group by adding a node data object to the model
@@ -24098,7 +24098,7 @@ export class LayoutEdge {
  * Every Palette uses a GridLayout by default.
  * <p class="box">
  * If you want to experiment interactively with most of the properties, try the <a href="../../samples/gLayout.html">Grid Layout</a> sample.
- * See samples that make use of GridLayout in the <a href="../../samples/index.html#gridlayout">samples index</a>.
+ * See samples that make use of GridLayout in the <a href="../../samples/uelder_test.html#gridlayout">samples index</a>.
  *
  * By default this layout will sort all of the Parts alphabetically
  * (comparing Part#text values, respecting case)
@@ -26657,7 +26657,7 @@ export class TreeModel extends Model {
  * The layout cannot guarantee that it provides optimal positioning of nodes when trying to minimize link crossings.
  * <p class="boxrun">
  * If you want to experiment interactively with most of the properties, try the <a href="../../samples/cLayout.html">Circular Layout</a> sample.
- * See samples that make use of CircularLayout in the <a href="../../samples/index.html#circularlayout">samples index</a>.
+ * See samples that make use of CircularLayout in the <a href="../../samples/uelder_test.html#circularlayout">samples index</a>.
  *
  * This layout makes use of a LayoutNetwork of
  * CircularVertexes and CircularEdges that normally
@@ -27014,7 +27014,7 @@ export class CircularEdge extends LayoutEdge {
  * Nodes will normally not overlap each other, but when there is a dense interconnectivity overlaps might not be avoidable.
  * <p class="boxrun">
  * If you want to experiment interactively with most of the properties, try the <a href="../../samples/fdLayout.html">Force Directed Layout</a> sample.
- * See samples that make use of ForceDirectedLayout in the <a href="../../samples/index.html#forcedirectedlayout">samples index</a>.
+ * See samples that make use of ForceDirectedLayout in the <a href="../../samples/uelder_test.html#forcedirectedlayout">samples index</a>.
  *
  * This layout makes use of a LayoutNetwork of
  * ForceDirectedVertexes and ForceDirectedEdges that normally
@@ -27454,7 +27454,7 @@ export class ForceDirectedEdge extends LayoutEdge {
  * There are many samples that use LayeredDigraphLayout.
  * <p class="boxrun">
  * If you want to experiment interactively with most of the properties, try the <a href="../../samples/ldLayout.html">Layered Digraph Layout</a> sample.
- * See samples that make use of LayeredDigraphLayout in the <a href="../../samples/index.html#layereddigraphlayout">samples index</a>.
+ * See samples that make use of LayeredDigraphLayout in the <a href="../../samples/uelder_test.html#layereddigraphlayout">samples index</a>.
  *
  * The #layerSpacing property controls the distance between layers.
  * The #columnSpacing property controls the breadth of each "column" --
@@ -28008,7 +28008,7 @@ export class LayeredDigraphEdge extends LayoutEdge {
  * <p class="boxrun">
  * For a discussion and examples of the most commonly used properties, see <a href="../../intro/trees.html">Trees</a> page in the Introduction.
  * If you want to experiment interactively with most of the properties, try the <a href="../../samples/tLayout.html">Tree Layout</a> sample.
- * See samples that make use of TreeLayout in the <a href="../../samples/index.html#treelayout">samples index</a>.
+ * See samples that make use of TreeLayout in the <a href="../../samples/uelder_test.html#treelayout">samples index</a>.
  *
  * This layout makes use of a LayoutNetwork of
  * TreeVertexes and TreeEdges that normally
