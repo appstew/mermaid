@@ -1,9 +1,9 @@
 # e fef
 
 
-  <script src="../../release/go.js"></script>
+  <script src="docs/release/go.js"></script>
   <div id="allSampleContent" class="p-4 w-full">
-    <script src="../../extensions/HyperlinkText.js"></script>
+    <script src="docs/extensions/HyperlinkText.js"></script>
     <script id="code">
       function init() {
 
