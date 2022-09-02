@@ -7,7 +7,8 @@
   - [수업노트](chapter/imdex.html)
   - [정리](trimmed/index.html)
   - [알고리즘](algorithms/index.html)
-  - [개인메모](diary/index.html)
+  - [개인메모](diary/index.md)
+  - [에러 & 디버깅](Errors/index.md)
   - [resourceStructure](quest/resourceStructure.md)
   - [section3](section3/index.md)
 -
