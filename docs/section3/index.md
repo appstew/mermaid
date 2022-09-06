@@ -1,4 +1,4 @@
-# df
+# [section3](section3/index.md)
 
 | d | d |d | |
 |-|-|-|-|
@@ -16,11 +16,79 @@
 ||||
 ||||
 ||||
+- 📔 Introduction
+-
+-
+- 📚 chapters
+    - [220901](section3/220901.md)
+    - [220902](section3/220902.md)
+    - [220903](section3/220903.md)
+    - [220904](section3/220904.md)
+    - [220906](section3/220906.md)
+    - [220907](section3/220907.md)
+    - [](section3/220901.md)
 
-- list
+[//]: # ()
+[//]: # ()
+[//]: # (  - [About Mermaid]&#40;README.md&#41;)
 
+[//]: # (  - [Deployment]&#40;n00b-gettingStarted.md&#41;)
+
+[//]: # (  - [Syntax and Configuration]&#40;n00b-syntaxReference.md&#41;)
+
+[//]: # ()
+[//]: # (  - [수업노트]&#40;chapter/imdex.html&#41;)
+
+[//]: # (  - [정리]&#40;trimmed/index.html&#41;)
+
+[//]: # (  - [알고리즘]&#40;algorithms/index.html&#41;)
+
+[//]: # (  - [개인메모]&#40;diary/index.md&#41;)
+
+[//]: # (  - [에러 & 디버깅]&#40;Errors/index.md&#41;)
+
+[//]: # (  - [resourceStructure]&#40;quest/resourceStructure.md&#41;)
+
+[//]: # (  - [section3]&#40;section3/index.md&#41;)
+
+[//]: # (-)
+
+[//]: # (- 🙌 Tests)
+[//]: # ()
+[//]: # (- 📊 Diagram Syntax)
+
+[//]: # (  - [Flowchart]&#40;flowchart.md&#41;)
+
+[//]: # ()
+[//]: # (  - [Gantt]&#40;gantt.md&#41;)
+
+[//]: # (  - [Class Diagram]&#40;classDiagram.md&#41;)
+
+[//]: # (  - [Pie Chart]&#40;pie.md&#41;)
+
+[//]: # ()
+[//]: # (- ⚙️ Deployment and Configuration)
+
+[//]: # ()
+[//]: # (  - [Tutorials]&#40;Tutorials.md&#41;)
+
+[//]: # (  - [API-Usage]&#40;usage.md&#41;)
+
+[//]: # (  - [Mermaid API Configuration]&#40;Setup.md&#41;)
+
+[//]: # (  - [Directives]&#40;directives.md&#41;)
+
+[//]: # (  - [Theming]&#40;theming.md&#41;)
+
+[//]: # (  - [Accessibility]&#40;accessibility.md&#41;)
+
+[//]: # (  - [Mermaid CLI]&#40;mermaidCLI.md&#41;)
+
+[//]: # (  - [Advanced usage]&#40;n00b-advanced.md&#41;)
+
+- 📚 Misc
 - 깃헙 블로그 시 짜증나는 것. 브라우저가 실행중인 현재 페이지(가령 현재 docs/section3/index.md)의 문서 안에서 같은 폴더 내의 다른 파일을 링크로 걸면
-그냥 220902.md 로 하거나 ./220902.md 로 하는 게 직관적이고, 실제로도 VS code 나 인텔리J 같은 ide 상에서는 클릭하면 그 문서로 잘 이동되지만, 실제 깃헙 블로그(jekyll이든 아니든)에서
+  그냥 220902.md 로 하거나 ./220902.md 로 하는 게 직관적이고, 실제로도 VS code 나 인텔리J 같은 ide 상에서는 클릭하면 그 문서로 잘 이동되지만, 실제 깃헙 블로그(jekyll이든 아니든)에서
   [http://localhost:63342/mermaid/docs/index.html#/section3/index] -> [localhost:63342/mermaid/docs/index.html#/220902] 같이 주소가 지정되면서 열리지 않는다.
     - 대신 index.md 안에서 아래와 같이 작성해야 브라우저상에서 제대로 열린다. 하지만 이러면 이제는 IDE 상에서 경로를 찾을 수 없고 열리지 않는다.
     - 그런데 이게 어떤 jekyll theme 이냐에 따라, 또는 현재 docsify 같은 .nojekyll 블로그인지 관계없이 설정 방법이 다 다르다.
@@ -51,7 +119,3 @@
   - [220902](./220902.md)
 // 현재 docsify 블로그에서는 별도 폴더에서 이렇게 하면 안된다.
 ```
-
-- Spring.JPA
-  - [220902](section3/220902.md)
-
